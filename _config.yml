@@ -1,0 +1,39 @@
+# Chalk World — Jekyll config
+# Local preview: bundle exec jekyll serve
+# Built on GitHub Pages (jekyll ~> 3.9, plugins per github-pages gem)
+
+title: Chalk World
+tagline: An application platform for human-LLM collaboration.
+description: >-
+  Chalk World (CW) is a platform for human-LLM collaboration via shared spatial
+  canvases. Modules are the proof points; CW is the substrate underneath.
+url: "https://chalkworld.ai"
+baseurl: ""
+
+# Author for the RSS feed
+author:
+  name: Andrew Rich
+
+# Permalinks — /blog/<year>/<month>/<day>/<slug>/
+permalink: /blog/:year/:month/:day/:title/
+
+# Markdown processing
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Plugins (GitHub Pages whitelist)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Files/folders to exclude from the build output
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor/
+  - .bundle/
+  - node_modules/
