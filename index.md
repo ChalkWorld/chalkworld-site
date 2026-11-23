@@ -62,14 +62,6 @@ description: A shared canvas for you and the AI. An application platform for hum
   </div>
 </section>
 
-<section class="pull-quote" aria-label="Quotation">
-  <div class="wrap">
-    <hr class="pull-quote__rule" aria-hidden="true">
-    <blockquote>&ldquo;The canvas computes. The LLM interprets. The user guides.&rdquo;</blockquote>
-    <hr class="pull-quote__rule" aria-hidden="true">
-  </div>
-</section>
-
 <section class="block">
   <div class="wrap">
     <p class="section-label">What you can build on it</p>
@@ -139,6 +131,14 @@ description: A shared canvas for you and the AI. An application platform for hum
         </p>
       </article>
     </div>
+  </div>
+</section>
+
+<section class="pull-quote" aria-label="Quotation">
+  <div class="wrap">
+    <hr class="pull-quote__rule" aria-hidden="true">
+    <blockquote>&ldquo;The canvas computes. The LLM interprets. The user guides.&rdquo;</blockquote>
+    <hr class="pull-quote__rule" aria-hidden="true">
   </div>
 </section>
 
