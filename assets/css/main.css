@@ -235,6 +235,9 @@ section.block { padding: clamp(2.5rem, 5vw, 4.5rem) 0; }
 }
 
 /* ---------- Two-column philosophy ---------- */
+#home-philosophy .section-title {
+  margin-bottom: 2.5rem;
+}
 .cols {
   display: grid;
   grid-template-columns: 1fr;
