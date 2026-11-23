@@ -2,24 +2,43 @@
 layout: default
 title: Blog
 permalink: /blog/
-description: Follow the build.
+description: A chronicle of the Chalk World build.
 ---
 
-<section class="blog-index">
-  <h1 class="blog-index__title">Follow the build</h1>
+<section class="page-head">
+  <div class="wrap">
+    <p class="section-label">The blog</p>
+    <h1 class="page-head__title">Follow the build</h1>
+    <p class="page-head__lede">
+      A chronicle of building Chalk World. Engineering notes,
+      architectural decisions, dead ends, and the occasional essay
+      about why any of this.
+    </p>
+  </div>
+</section>
 
-  {% if site.posts.size > 0 %}
-    <ul class="blog-index__posts">
+<section class="block" style="padding-top: 0; border-top: none;">
+  <div class="wrap">
+    {% if site.posts.size > 0 %}
+    <ul class="blog-list">
       {% for post in site.posts %}
-        <li class="blog-index__post">
-          <time class="blog-index__date" datetime="{{ post.date | date_to_xmlschema }}">
-            {{ post.date | date: "%b %-d, %Y" }}
-          </time>
-          <a class="blog-index__link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        </li>
+      <li>
+        <a href="{{ post.url | relative_url }}">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+          <div>
+            <h2 class="blog-list__title">{{ post.title }}</h2>
+            {% if post.description %}
+            <p class="blog-list__excerpt">{{ post.description }}</p>
+            {% elsif post.excerpt %}
+            <p class="blog-list__excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+            {% endif %}
+          </div>
+        </a>
+      </li>
       {% endfor %}
     </ul>
-  {% else %}
-    <p class="blog-index__empty">No posts yet.</p>
-  {% endif %}
+    {% else %}
+    <p>No posts yet.</p>
+    {% endif %}
+  </div>
 </section>
