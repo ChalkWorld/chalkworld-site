@@ -95,7 +95,7 @@ description: A shared canvas for you and the AI. An application platform for hum
       </article>
       <article class="module-card">
         <span class="module-card__tag">Semi-pro</span>
-        <h3 class="module-card__name">TTRPG</h3>
+        <h3 class="module-card__name">Table Top Gaming</h3>
         <p class="module-card__desc">
           A shared game surface for human and AI to GM, play, and build
           maps together. One canvas for the party, the model, and
