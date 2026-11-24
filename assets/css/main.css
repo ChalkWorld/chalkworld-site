@@ -525,3 +525,35 @@ section.block { padding: clamp(2.5rem, 5vw, 4.5rem) 0; }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
 }
+
+/* ---------- Pinned-post chips ---------- */
+.blog-list__chip {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  margin: 0 0 0.6rem;
+}
+.blog-list__chip--pinned {
+  color: var(--coral-ink);
+  background: var(--coral-tint);
+}
+
+.teaser-list__chip {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+.teaser-list__chip--pinned {
+  color: var(--coral-ink);
+  background: var(--coral-tint);
+}

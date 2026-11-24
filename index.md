@@ -152,8 +152,24 @@ description: A shared canvas for you and the AI. An application platform for hum
       essay about why any of this. If you want to see a platform get
       built in public, this is where.
     </p>
+    {% assign pinned_posts = site.posts | where: "pinned", true %}
+    {% assign unpinned_posts = site.posts | where_exp: "p", "p.pinned != true" %}
+    {% assign pinned_count = pinned_posts.size %}
+    {% assign remaining = 5 | minus: pinned_count %}
+
     <ul class="teaser-list">
-      {% for post in site.posts limit: 5 %}
+      {% for post in pinned_posts limit: 5 %}
+      <li>
+        <a href="{{ post.url | relative_url }}">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+          <span class="teaser-list__title">{{ post.title }}</span>
+          <span class="teaser-list__chip teaser-list__chip--pinned">Pinned</span>
+        </a>
+      </li>
+      {% endfor %}
+
+      {% if remaining > 0 %}
+      {% for post in unpinned_posts limit: remaining %}
       <li>
         <a href="{{ post.url | relative_url }}">
           <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
@@ -161,6 +177,7 @@ description: A shared canvas for you and the AI. An application platform for hum
         </a>
       </li>
       {% endfor %}
+      {% endif %}
     </ul>
     <p class="block__see-all">
       <a href="{{ '/blog/' | relative_url }}">See all posts →</a>
