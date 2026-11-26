@@ -78,7 +78,7 @@ a:hover { text-decoration-color: var(--accent-blue); }
   display: inline-flex;
   align-items: baseline;
   gap: 0.4rem;
-  font-family: "Lora", Georgia, serif;
+  font-family: "Solway", Georgia, serif;
   font-weight: 500;
   font-size: 1.5rem;
   line-height: 1;
@@ -86,7 +86,7 @@ a:hover { text-decoration-color: var(--accent-blue); }
   text-decoration: none;
   color: var(--ink);
 }
-.brand__dot { color: var(--accent-blue); font-weight: 400; }
+.brand__dot { color: var(--accent-blue); font-weight: 600; }
 .site-nav__links {
   list-style: none; padding: 0; margin: 0;
   display: flex; gap: 1.5rem;
