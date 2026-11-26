@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CW wordmark — Lora vs Solway at current header size</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Solway:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sage:#DDE3D6;
+    --slate:#1a211d;
+    --chalk-blue:#7aa6b8;
+    --ink:#1a211d;
+    --rule-soft:rgba(26, 33, 29, 0.15);
+    --max:1140px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#f3f1ec;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#1a211d;padding:40px 24px}
+  .wrap{max-width:1100px;margin:0 auto}
+  h1{font-weight:500;letter-spacing:-0.01em;font-size:22px;margin:0 0 6px}
+  .sub{color:#555;font-size:14px;margin-bottom:32px}
+  h2{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#555;margin:34px 0 10px}
+
+  /* Mock sticky header — same tokens as the real site */
+  .site-header {
+    background: rgba(221, 227, 214, 0.85);
+    backdrop-filter: saturate(140%) blur(8px);
+    -webkit-backdrop-filter: saturate(140%) blur(8px);
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .site-nav {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.875rem 1.5rem;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    font-weight: 500;
+    font-size: 1.5rem;         /* <-- current size, unchanged */
+    line-height: 1;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .brand--lora { font-family: "Lora", Georgia, serif; }
+  .brand--solway { font-family: "Solway", Georgia, serif; }
+  .brand__dot { color: var(--chalk-blue); font-weight: 400; }  /* <-- current dot weight */
+
+  .site-nav__links {
+    list-style: none; padding: 0; margin: 0;
+    display: flex; gap: 1.5rem;
+    font-size: 0.9375rem;
+  }
+  .site-nav__links a {
+    color: var(--ink);
+    text-decoration: none;
+    opacity: 0.75;
+  }
+  .site-nav__links a:hover { opacity: 1; }
+
+  /* Side-by-side at normal header size */
+  .label {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #666;
+    padding: 6px 20px 4px;
+    border-left: 3px solid #ccc;
+  }
+  .label.current { border-left-color:#aa8044; }
+  .label.new     { border-left-color:#4c7180; }
+
+  /* Enlarged examples for close inspection */
+  .close-look {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 10px;
+  }
+  .close-panel {
+    background: var(--sage);
+    padding: 36px 32px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+  .close-panel .mini {
+    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #555;
+  }
+  .close-panel .wordmark {
+    display:inline-flex; align-items: baseline; gap: 0.4rem;
+    font-weight: 500;
+    font-size: 3rem;             /* 2× size for close inspection */
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .close-panel .wordmark.lora   { font-family: "Lora", Georgia, serif; }
+  .close-panel .wordmark.solway { font-family: "Solway", Georgia, serif; }
+  .close-panel .wordmark .dot { color: var(--chalk-blue); font-weight: 400; }
+
+  /* A third row: Solway slightly bumped so the user can preview that option too */
+  .brand--solway-bumped {
+    font-family: "Solway", Georgia, serif;
+    font-size: clamp(1.625rem, 2vw, 1.875rem); /* 26–30px, the recommended modest bump */
+  }
+
+  /* Dot-weight lever row (Solway) */
+  .dot-weight-row .brand__dot.weight-400 { font-weight: 400; }
+  .dot-weight-row .brand__dot.weight-500 { font-weight: 500; }
+  .dot-weight-row .brand__dot.weight-600 { font-weight: 600; }
+  .dot-weight-row .brand__dot.weight-700 { font-weight: 700; }
+
+  footer{margin-top:40px;font-size:11px;color:#888;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>CW wordmark — Lora vs Solway at current header size</h1>
+  <div class="sub">Both mock headers render at the exact current <code>.brand</code> tokens: 1.5rem (24px), weight 500, −0.01em letterspacing, 0.4rem dot gap, chalk-blue <code>#7aa6b8</code> dot at weight 400. Only the font-family differs.</div>
+
+  <div class="label current">CURRENT — Lora 500 at 1.5rem</div>
+  <header class="site-header">
+    <nav class="site-nav">
+      <a class="brand brand--lora" href="#">Chalk World<span class="brand__dot">.</span></a>
+      <ul class="site-nav__links">
+        <li><a href="#">The idea</a></li>
+        <li><a href="#">Modules</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="label new" style="margin-top:28px">SOLWAY — same size (1.5rem), the font-only swap</div>
+  <header class="site-header">
+    <nav class="site-nav">
+      <a class="brand brand--solway" href="#">Chalk World<span class="brand__dot">.</span></a>
+      <ul class="site-nav__links">
+        <li><a href="#">The idea</a></li>
+        <li><a href="#">Modules</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="label new" style="margin-top:28px">SOLWAY with modest size bump (1.625–1.875rem clamp, 26–30px)</div>
+  <div class="sub" style="margin:0 0 6px">Shown so you can compare to the same-size swap above. Judge this one only if the same-size version feels small.</div>
+  <header class="site-header">
+    <nav class="site-nav">
+      <a class="brand brand--solway-bumped" href="#">Chalk World<span class="brand__dot">.</span></a>
+      <ul class="site-nav__links">
+        <li><a href="#">The idea</a></li>
+        <li><a href="#">Modules</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h2>Close look — Lora vs Solway at 2× size for glyph comparison</h2>
+  <div class="close-look">
+    <div class="close-panel">
+      <div class="mini">Lora 500</div>
+      <div class="wordmark lora">Chalk World<span class="dot">.</span></div>
+    </div>
+    <div class="close-panel">
+      <div class="mini">Solway 500</div>
+      <div class="wordmark solway">Chalk World<span class="dot">.</span></div>
+    </div>
+  </div>
+
+  <h2>Side lever — dot weight, Solway at current 1.5rem</h2>
+  <div class="sub" style="margin:0 0 10px">Current dot weight is 400 (lighter than the 500 wordmark). Try bolder values — pops the dot without changing size.</div>
+  <div class="dot-weight-row">
+    <header class="site-header" style="margin-bottom:10px">
+      <nav class="site-nav">
+        <a class="brand brand--solway" href="#">Chalk World<span class="brand__dot weight-400">.</span></a>
+        <div style="font-size:11px;color:#666;letter-spacing:0.08em;text-transform:uppercase;">dot 400 (current)</div>
+      </nav>
+    </header>
+    <header class="site-header" style="margin-bottom:10px">
+      <nav class="site-nav">
+        <a class="brand brand--solway" href="#">Chalk World<span class="brand__dot weight-500">.</span></a>
+        <div style="font-size:11px;color:#666;letter-spacing:0.08em;text-transform:uppercase;">dot 500</div>
+      </nav>
+    </header>
+    <header class="site-header" style="margin-bottom:10px">
+      <nav class="site-nav">
+        <a class="brand brand--solway" href="#">Chalk World<span class="brand__dot weight-600">.</span></a>
+        <div style="font-size:11px;color:#666;letter-spacing:0.08em;text-transform:uppercase;">dot 600</div>
+      </nav>
+    </header>
+    <header class="site-header">
+      <nav class="site-nav">
+        <a class="brand brand--solway" href="#">Chalk World<span class="brand__dot weight-700">.</span></a>
+        <div style="font-size:11px;color:#666;letter-spacing:0.08em;text-transform:uppercase;">dot 700</div>
+      </nav>
+    </header>
+  </div>
+
+  <footer>chalkworld-site/_design-previews/WORDMARK_SOLWAY_PREVIEW.html · nothing shipped to the site yet</footer>
+</div>
+</body>
+</html>
