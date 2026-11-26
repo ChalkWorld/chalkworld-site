@@ -8,7 +8,7 @@ description: A chronicle of the Chalk World build.
 <section class="page-head">
   <div class="wrap">
     <p class="section-label">The blog</p>
-    <h1 class="page-head__title">Follow the build</h1>
+    <h1 class="page-head__title">Follow the build<span class="cw-dot">.</span></h1>
     <p class="page-head__lede">
       A chronicle of building Chalk World. Engineering notes,
       architectural decisions, dead ends, and the occasional essay

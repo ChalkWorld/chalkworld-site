@@ -7,7 +7,7 @@ description: A shared canvas for you and the AI. An application platform for hum
 <section class="hero">
   <div class="wrap">
     <span class="hero__eyebrow">Being built in public</span>
-    <h1 class="hero__title">A shared canvas for you <em>and the AI</em>.</h1>
+    <h1 class="hero__title">A shared canvas for you <em>and the AI</em><span class="cw-dot">.</span></h1>
     <p class="hero__beat">A fresh take on visual collaboration with AI.</p>
     <p class="hero__lede">
       Chalk World is an application platform for human–LLM collaboration.
@@ -25,7 +25,7 @@ description: A shared canvas for you and the AI. An application platform for hum
 <section class="block" id="home-philosophy">
   <div class="wrap">
     <p class="section-label">The idea</p>
-    <h2 class="section-title">Chatbots give you text. Image models give you pictures. Chalk World gives you a place to think together.</h2>
+    <h2 class="section-title">Chatbots give you text. Image models give you pictures. Chalk World gives you a place to think together<span class="cw-dot">.</span></h2>
     <div class="cols">
       <div class="col">
         <h3>AI as a collaborator at the canvas</h3>
@@ -65,7 +65,7 @@ description: A shared canvas for you and the AI. An application platform for hum
 <section class="block">
   <div class="wrap">
     <p class="section-label">What you can build on it</p>
-    <h2 class="section-title">A platform, not a product.</h2>
+    <h2 class="section-title">A platform, not a product<span class="cw-dot">.</span></h2>
     <p class="section-lede">
       CW is modular because the breakthrough is general: a human and an
       AI thinking together on a shared canvas works the same way
@@ -145,7 +145,7 @@ description: A shared canvas for you and the AI. An application platform for hum
 <section class="block">
   <div class="wrap">
     <p class="section-label">Follow along</p>
-    <h2 class="section-title">A running log of the build.</h2>
+    <h2 class="section-title">A running log of the build<span class="cw-dot">.</span></h2>
     <p class="section-lede">
       The blog is a chronicle, not a marketing channel. Engineering
       decisions, architectural trade-offs, the dead ends, the occasional
